@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-func main() {
+func push() {
 	// Get connection string from environment variable
 	connectionString := os.Getenv("SERVICEBUS_CONNECTION_STRING")
 	if connectionString == "" {

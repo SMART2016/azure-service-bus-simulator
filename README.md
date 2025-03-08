@@ -16,9 +16,9 @@ This is azure service buss simulator with go code
                 {  
                         "UserConfig": {  
                          "Namespaces": [  
-                           {         "Name": "servicebus",  
+                           {         "Name": "sbemulatorns",  
                              "Queues": [  
-                               {             "Name": "control-plane-notifications",  
+                               {             "Name": "control-plane-notificatio",  
                                  "Properties": {  
                                    "DeadLetteringOnMessageExpiration": false,  
                                    "DefaultMessageTimeToLive": "PT1H",  
@@ -56,4 +56,4 @@ This is azure service buss simulator with go code
     - https://github.com/SMART2016/azure-service-bus-simulator
 - For running the sender and reciever set below env variable
     - `export SERVICEBUS_QUEUE_NAME="control-plane-notifications"`
-    - `export SERVICEBUS_CONNECTION_STRING="Endpoint=sb://localhost;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=SAS_KEY_VALUE;UseDevelopmentEmulator=true;"`
+    - `export SERVICEBUS_CONNECTION_STRING="Endpoint=sb://localhost:5672;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=SAS_KEY_VALUE;UseDevelopmentEmulator=true;"`

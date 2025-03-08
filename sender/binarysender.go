@@ -9,7 +9,7 @@ import (
 	"github.com/Azure/azure-sdk-for-go/sdk/messaging/azservicebus"
 )
 
-func main() {
+func binarySender() {
 	connectionString := os.Getenv("SERVICEBUS_CONNECTION_STRING")
 	queueName := os.Getenv("SERVICEBUS_QUEUE_NAME")
 
