@@ -8,24 +8,41 @@ services:
     ports:
       - "5672:5672"
     environment:
-      SQL_SERVER: sqledge  
+      SQL_SERVER: sqledge
       MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD}
       ACCEPT_EULA: ${ACCEPT_EULA}
+    env_file:
+      - .env
     depends_on:
       - sqledge
     networks:
       sb-emulator:
         aliases:
           - "sb-emulator"
+
   sqledge:
-        container_name: "sqledge"
-        image: "mcr.microsoft.com/azure-sql-edge:latest"
-        networks:
-          sb-emulator:
-            aliases:
-              - "sqledge"
-        environment:
-          ACCEPT_EULA: ${ACCEPT_EULA}
-          MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD}
+    container_name: "sqledge"
+    image: "mcr.microsoft.com/azure-sql-edge:latest"
+    user: "root"
+    networks:
+      sb-emulator:
+        aliases:
+          - "sqledge"
+    environment:
+      ACCEPT_EULA: ${ACCEPT_EULA}
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD}
+    env_file:
+      - .env
 networks:
   sb-emulator:
+
+
+
+
+
+
+
+
+
+
+
